@@ -1,0 +1,9 @@
+[submodule "lib/SDL"]
+	path = lib/SDL
+	url = https://github.com/libsdl-org/SDL
+[submodule "lib/MLog"]
+	path = lib/MLog
+	url = https://github.com/Aethari/MLog
+[submodule "lib/sds"]
+	path = lib/sds
+	url = https://github.com/antirez/sds
