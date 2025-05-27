@@ -75,7 +75,7 @@ build-nix:
 
 test-nix:
 	make
-
+	
 	@echo
 	@echo Running project:
 	@echo ./build/sun16
@@ -113,6 +113,8 @@ build-win:
 test-win:
 	make
 
+	cd example
+	
 	@echo
 	@echo Running project:
 	@echo ./build/sun16.exe
