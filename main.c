@@ -22,7 +22,7 @@
 
 #define PATH_MAX_LEN 2048
 
-int main() {
+int main(int argc, char *argv[]) {
 	// get cwd
 	char *buff = (char *)malloc(PATH_MAX_LEN);
 	if(buff == NULL) {
@@ -73,4 +73,6 @@ int main() {
 			}
 		}
 	}
+
+	return 0;
 }
