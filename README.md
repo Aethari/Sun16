@@ -24,7 +24,7 @@ when it comes to code size.
 	  is only support for Unix and Windows at the moment
 - Limited, yet limitless
 	- While Sun16 imposes a limit on the *sizes* of sprites, spritesheets, and
-	  tilemaps, you can store and display as many as you want in your project
+	  tilemaps, you can store and display up to 16 of each in your project
 
 ## Specs
 | Component			| Specs						  |

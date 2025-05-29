@@ -75,5 +75,6 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
+	cart_free();
 	return 0;
 }
