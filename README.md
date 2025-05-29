@@ -39,6 +39,17 @@ when it comes to code size.
 
 ## Building from source
 
+### Adding platforms
+At the moment, Sun16 only supports two platforms: Unix and Windows. This 
+availability would not be a problem if Sun16 did not use stdin/out for file
+access, but because it does, there is platform specific code.  
+
+Luckily there is/will be very few places where Sun16 actually uses the
+filesystem. If you want to add support for more platforms, simply update the
+`#ifdef`/`#elif` directives with your platform in the following files:
+- [main.c](main.c) - needs a definition for unix `getcwd()`
+- [cart.c](src/cart.c) - needs a definition for unix `access()`
+
 ## License
 Sun16 is licensed under the MIT license.  
 See [LICENSE.txt](LICENSE.txt) for license info.

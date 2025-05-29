@@ -75,12 +75,13 @@ build-nix:
 
 test-nix:
 	make
-	
+
+	@echo cd example
 	@echo
 	@echo Running project:
-	@echo ./build/sun16
+	@echo ../build/sun16
 	@echo
-	@LD_LIBRARY_PATH=build ./build/sun16
+	@cd example && LD_LIBRARY_PATH=build ../build/sun16
 
 install-nix:
 	make
@@ -113,13 +114,12 @@ build-win:
 test-win:
 	make
 
-	cd example
-	
+	@echo cd example
 	@echo
 	@echo Running project:
-	@echo ./build/sun16.exe
+	@echo ../build/sun16.exe
 	@echo
-	@./build/sun16.exe
+	@cd example && ../build/sun16.exe
 
 clean-win:
 	@cmd /C "if not exist "build" mkdir build"

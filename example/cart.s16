@@ -1,1 +1,30 @@
-title = "Sun16 test project"
+title = "Sun16 Test Project"
+
+spritesheets = {
+	{
+		path = "assets/sprites.sdat",
+		index = 1
+	}
+}
+
+tilemaps = {
+	{
+		path = "assets/tilemap.sdat",
+		index = 1
+	}
+}
+
+sounds = {
+	{
+		path = "assets/sfx01.ogg",
+		index = 1
+	}
+}
+
+music = {
+	{
+		path = "assets/music.ogg",
+		type = "music",
+		index = 1
+	}
+}

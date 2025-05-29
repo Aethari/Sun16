@@ -6,6 +6,14 @@
 #ifndef CART_H
 #define CART_H
 
+// == Getters ==================================================
+sds cart_get_title();
+
+// == Setters ==================================================
+void cart_set_title(sds new_title);
+
+// == Other functions ==========================================
+
 /// Creates a Lua instance and loads data from a
 /// cart.s16 file located in the working directory.
 ///

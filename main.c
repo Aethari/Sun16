@@ -26,12 +26,12 @@ int main(int argc, char *argv[]) {
 	// get cwd
 	char *buff = (char *)malloc(PATH_MAX_LEN);
 	if(buff == NULL) {
-		printf("Error: Memory allocation failed for cwd buffer\n");
+		printf("Error (main.c): Memory allocation failed for cwd buffer\n");
 		return 1;
 	}
 
 	if(getcwd(buff, PATH_MAX_LEN) == NULL) {
-		printf("Error: getcwd failed\n");
+		printf("Error (main.c): getcwd failed\n");
 		return 1;
 	}
 	
@@ -52,9 +52,10 @@ int main(int argc, char *argv[]) {
 	);
 
 	window = SDL_CreateWindow(
-		"Sun16",
+		cart_get_title(),
 		1024,
 		512,
+		SDL_WINDOW_OPENGL |
 		SDL_WINDOW_RESIZABLE
 	);
 	SDL_Renderer *rend = SDL_CreateRenderer(window, NULL);
