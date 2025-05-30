@@ -12,6 +12,7 @@
 #include <sds.h>
 
 #include "cart.h"
+#include "render.h"
 
 #ifdef __unix__
 	#include <unistd.h>
@@ -39,7 +40,6 @@ int main(int argc, char *argv[]) {
 	free(buff);
 
 	cart_init(sdsdup(cwd));
-	sdsfree(cwd);
 
 	SDL_Window *window;
 	bool running = true;
@@ -58,23 +58,26 @@ int main(int argc, char *argv[]) {
 		SDL_WINDOW_OPENGL |
 		SDL_WINDOW_RESIZABLE
 	);
-	SDL_Renderer *rend = SDL_CreateRenderer(window, NULL);
+	render_init(window);
 
 	while(running) {
 		SDL_Event event;
 
-		SDL_SetRenderDrawColorFloat(rend, 0, 0, 0, 1);
-		SDL_RenderClear(rend);
-
-		SDL_RenderPresent(rend);
+		render_draw();
 
 		while(SDL_PollEvent(&event)) {
-			if(event.type == SDL_EVENT_QUIT) {
-				running = false;
+			switch(event.type) {
+				case SDL_EVENT_QUIT:
+					running = false;
+					break;
+				case SDL_EVENT_WINDOW_RESIZED:
+					render_scale();
+					break;
 			}
 		}
 	}
 
+	sdsfree(cwd);
 	cart_free();
 	return 0;
 }

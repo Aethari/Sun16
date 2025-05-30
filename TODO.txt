@@ -1,0 +1,8 @@
+Tasks I may forget to do later
+
+Lua Interface:
+----------------------------------------------------------------
+	- When making engine modules/tables make a `Colors` table
+	  that has integers `blue`, `green`, etc. so that the user
+	  can just type `Colors.blue` and use the blue color 
+	  (drawing functions use integers for colors)
