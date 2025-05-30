@@ -50,7 +50,8 @@ void render_pix(int x, int y, Color col);
 /// - col: A Color value that the rectangle will be drawn in
 void render_rect(int x, int y, int sx, int sy, bool fill, Color col);
 
-/// Draws a line on the renderer.
+/// Draws a line on the renderer, using Bresenham's
+/// Line Algorithm.
 ///
 /// Parameters:
 /// - x,y: The start point of the line

@@ -5,6 +5,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <SDL3/SDL.h>
 
@@ -59,10 +60,35 @@ void render_rect(int x, int y, int sx, int sy, bool fill, Color col) {
 	}
 }
 
-void render_line(int x, int y, int sx, int sy, Color col) {
+void render_line(int x, int y, int x1, int y1, Color col) {
 	struct RGB rgb = hex_to_rgb(col);
 	SDL_SetRenderDrawColor(rend, rgb.r, rgb.g, rgb.b, 255);
-	SDL_RenderLine(rend, x, y, sx, sy);
+
+	int dx = abs(x1 - x);
+	int dy = abs(y1 - y);
+	int sx = x < x1 ? 1 : -1;
+	int sy = y < y1 ? 1 : -1;
+	int err = dx - dy;
+
+	int x2 = x;
+	int y2 = y;
+
+	while(true) {
+		SDL_RenderPoint(rend, x2, y2);
+
+		if(x2 == x1 && y2 == y1) break;
+
+		int e2 = 2 * err;
+		if(e2 > -dy) {
+			err -= dy;
+			x2 += sx;
+		}
+
+		if(e2 < dx) {
+			err += dx;
+			y2 += sy;
+		}
+	}
 }
 
 void render_circ(int x, int y, int radius, bool fill, Color col) {
@@ -111,7 +137,6 @@ void render_circ(int x, int y, int radius, bool fill, Color col) {
 
 // == Other Functions ==========================================
 void render_scale() {
-	SDL_Window *win = SDL_GetRenderWindow(rend);
 	render_clear(BLACK);
 
 	SDL_SetRenderLogicalPresentation(
