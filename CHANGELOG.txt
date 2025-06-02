@@ -1,0 +1,7 @@
+Version 0.1 (alpha)
+----------------------------------------------------------------
+- Cartridge metadata loading (src/cart.h)
+- Basic graphics added (src/render.h)
+	- Screen scaling based on window size
+	- Several functions to draw shapes to the screen
+- Documentation added

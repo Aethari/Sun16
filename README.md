@@ -37,7 +37,33 @@ when it comes to code size.
 | Audio				| 16 total tracks			  |
 | Input				| joystick/arrows + 4 buttons |
 
-## Building from source
+## Roadmap
+| Task          | Completed? |
+|---------------|------------|
+| Graphics      | Yes        |
+| Input         | No         |
+| Text Graphics | No         |
+| Sprites       | No         |
+| Tilemaps      | No         |
+| Sounds/music  | No         |
+| Lua interface | No         |
+
+## Usage
+Sun16 has official documentation, hosted within this repo's [doc](doc/) folder 
+as plain Markdown. See the [Getting Started](doc/getting_started.md) guide
+there to learn how to use the framework. The guide assumes that you already
+know about how to program, and is not the *most* suitable for beginners.
+
+### Source documentation
+I did my best to document the source code so that others can use and improve
+upon my code. Documentation is found in the header (`.h`) files, as opposed
+to the implementation (`.c`) files. Headers also have a brief description of
+their function in the block comment at the top of the file.  
+
+The amount of headers was intentionally kept small, to reduce the size of
+the project, and to increase navigatability. At its core, Sun16 is not a
+very complicated program, so it doesn't need *too* much code (at least, I
+hope for future me).
 
 ### Adding platforms
 At the moment, Sun16 only supports two platforms: Unix and Windows. This 

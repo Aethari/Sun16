@@ -153,11 +153,5 @@ void render_init(SDL_Window *win) {
 }
 
 void render_draw() {
-	render_pix(10, 10, BLUE);
-	render_rect(0, 0, 256, 128, false, RED);
-	render_line(31, 11, 35, 111, GREEN);
-	render_circ(150, 50, 25, true, YELLOW);
-	render_circ(150, 50, 25, false, ORANGE);
-
 	SDL_RenderPresent(rend);
 }
