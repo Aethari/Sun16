@@ -1,4 +1,11 @@
-Version 0.1 (alpha)
+Version 0.2.0 (alpha)
+----------------------------------------------------------------
+- Added missing colors (src/render.h)
+	- Replaced dark orange with brown
+- Reordered colors for better code organization (src/render.h)
+- Added input support (src/input.h)
+
+Version 0.1.0 (alpha)
 ----------------------------------------------------------------
 - Cartridge metadata loading (src/cart.h)
 - Basic graphics added (src/render.h)

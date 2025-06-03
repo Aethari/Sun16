@@ -12,19 +12,19 @@ typedef enum {
 	BLACK       = 0x000000,
 	GRAY        = 0xB2B2B2,
 	RED         = 0xCB1717,
-	GREEN       = 0x16CC21,
+	ORANGE      = 0xE58317,
 	YELLOW      = 0xE4E91B,
+	GREEN       = 0x16CC21,
 	BLUE        = 0x1695CC,
 	PURPLE      = 0xA416CC,
-	ORANGE      = 0xE58317,
+	BROWN       = 0x823c11,
 
-	DARK_GRAY,
+	DARK_GRAY   = 0x525050,
 	DARK_RED    = 0x700D0D,
-	DARK_GREEN,
-	DARK_YELLOW,
-	DARK_BLUE,
-	DARK_PURPLE,
-	DARK_ORANGE
+	DARK_YELLOW = 0xC9B216,
+	DARK_GREEN  = 0x206C25,
+	DARK_BLUE   = 0x1F3B79,
+	DARK_PURPLE = 0x551268
 } Color;
 
 // == Render modifying functions ===============================

@@ -40,6 +40,7 @@ when it comes to code size.
 ## Roadmap
 | Task          | Completed? |
 |---------------|------------|
+| Cart metadata | Yes        |
 | Graphics      | Yes        |
 | Input         | No         |
 | Text Graphics | No         |

@@ -13,6 +13,7 @@
 
 #include "cart.h"
 #include "render.h"
+#include "input.h"
 
 #ifdef __unix__
 	#include <unistd.h>
@@ -61,20 +62,8 @@ int main(int argc, char *argv[]) {
 	render_init(window);
 
 	while(running) {
-		SDL_Event event;
-
 		render_draw();
-
-		while(SDL_PollEvent(&event)) {
-			switch(event.type) {
-				case SDL_EVENT_QUIT:
-					running = false;
-					break;
-				case SDL_EVENT_WINDOW_RESIZED:
-					render_scale();
-					break;
-			}
-		}
+		running = input_update();
 	}
 
 	sdsfree(cwd);
