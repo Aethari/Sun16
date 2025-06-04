@@ -38,16 +38,17 @@ when it comes to code size.
 | Input				| joystick/arrows + 4 buttons |
 
 ## Roadmap
-| Task          | Completed? |
-|---------------|------------|
-| Cart metadata | Yes        |
-| Graphics      | Yes        |
-| Input         | No         |
-| Text Graphics | No         |
-| Sprites       | No         |
-| Tilemaps      | No         |
-| Sounds/music  | No         |
-| Lua interface | No         |
+| Task            | Completed? | Target version |
+|-----------------|------------|----------------|
+| Cart metadata   | Yes        | 0.1.0 (alpha)  |
+| Graphics        | Yes        | 0.1.0 (alpha)  |
+| Input           | Yes        | 0.2.0 (alpha)  |
+| Text Graphics   | Yes        | 0.3.0 (alpha)  |
+| Sprites         | No         | 0.4.0 (alpha)  |
+| Tilemaps        | No         | 0.4.0 (alpha)  |
+| Sounds/music    | No         | 0.5.0 (alpha)  |
+| Lua interface   | No         | 0.1.0          |
+| Bugfixes/polish | No         | 1.0.0          |
 
 ## Usage
 Sun16 has official documentation, hosted within this repo's [doc](doc/) folder 

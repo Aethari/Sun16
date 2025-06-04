@@ -3,6 +3,8 @@
  * 2025 DJaySky
  */
 
+#include <sds.h>
+
 #ifndef RENDER_H
 #define RENDER_H
 
@@ -68,6 +70,9 @@ void render_line(int x, int y, int sx, int sy, Color col);
 /// - fill: Whether or not the circle should filled (true for filled)
 /// - col: A Color value that the circle will be drawn in
 void render_circ(int x, int y, int radius, bool fill, Color col);
+
+void render_char(char chr, int x, int y, Color col);
+void render_print(sds str, int x, int y, Color col);
 
 // == Other functions ==========================================
 /// Recalculates the renderer's scale and applies it

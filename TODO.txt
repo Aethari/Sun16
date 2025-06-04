@@ -1,5 +1,11 @@
 Tasks I may forget to do later
 
+Sprites:
+----------------------------------------------------------------
+	- Create two spritesheet access functions - one to get a 16
+	  x16 sprite, and another to get a custom sized chunk of the
+	  spritesheet
+
 Lua API:
 ----------------------------------------------------------------
 	- When making engine modules/tables make a `Colors` table

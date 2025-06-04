@@ -9,7 +9,10 @@
 
 #include <SDL3/SDL.h>
 
+#include <sds.h>
+
 #include "render.h"
+#include "font.h"
 
 // == Local variables ==========================================
 SDL_Renderer *rend;
@@ -132,6 +135,27 @@ void render_circ(int x, int y, int radius, bool fill, Color col) {
 				}
 			}
 		}
+	}
+}
+
+void render_char(char chr, int x, int y, Color col) {
+	int *font_data = font_get_data(chr);
+
+	for(int i = 0; i < 16; i++) {
+		int row = font_data[i];
+
+		for(int bit = 0; bit < 8; bit++) {
+			if(row & (1 << (7 - bit))) {
+				render_pix(x + bit, y + i, col);
+			}
+		}
+	}
+}
+
+void render_print(sds str, int x, int y, Color col) {
+	for(int i = 0; i < sdslen(str); i++) {
+		char chr = str[i];
+		render_char(chr, x + (i*8), y, col);
 	}
 }
 
