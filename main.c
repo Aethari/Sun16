@@ -62,6 +62,9 @@ int main(int argc, char *argv[]) {
 	render_init(window);
 
 	while(running) {
+		render_print(sdsnew("abcdefghijklmnopqrstuvwxyz"), 10, 10, WHITE);
+		render_print(sdsnew("1234567890!@#$%^&*()+-/=<>"), 10, 27, WHITE);
+		render_print(sdsnew(".,:;\"'`~\\"), 10, 44, WHITE);
 		render_draw();
 		running = input_update();
 	}

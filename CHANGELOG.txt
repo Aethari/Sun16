@@ -1,10 +1,19 @@
+Version 0.3.1 (alpha)
+----------------------------------------------------------------
+- Redesigned font (src/font.c)
+- Added missing font characters (src/font.c)
+- Created scripts folder with README
+- Created Aseprite script to translate font images to C
+  (scripts/font_export.lua)
+- Created Aseprite file for font (src/assets/font.aseprite)
+
 Version 0.3.0 (alpha)
 ----------------------------------------------------------------
 - Fixed typo in README.md
 - Added target version to roadmap in README.md
 - Created basic built-in font data (src/font.c)
 	- Only has alphanumeric characters
-- Created text rendering (src/font.c)
+- Created text rendering (src/font.h)
 
 Version 0.2.0 (alpha)
 ----------------------------------------------------------------

@@ -26,6 +26,10 @@ when it comes to code size.
 	- While Sun16 imposes a limit on the *sizes* of sprites, spritesheets, and
 	  tilemaps, you can store and display up to 16 of each in your project
 
+### Potential features
+Some features that may or may not be added later, but are cool ideas anyway:
+- Custom fonts (and font sizes)
+
 ## Specs
 | Component			| Specs						  |
 |-------------------|-----------------------------|
