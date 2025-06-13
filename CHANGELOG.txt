@@ -1,29 +1,71 @@
+Version 0.x.x (alpha)
+================================================================
+Major changes
+--------------------------------
+- Added Aseprite script to export spritesheets to .sdat files
+  (scripts/sprite_export.lua)
+
+Minor changes
+--------------------------------
+- Changed behavior of cart getters to return NULL instead of
+  throwing an error when there is no data at a given index
+  (src/cart.c)
+- Added example spritesheet (example/assets/sprites.sdat)
+
+Bugfixes
+--------------------------------
+- Fixed typo in scripts/font_export.lua
+- Fixed a bug preventing the Aseprite font export script from
+  using the path the user provided (scripts/font_export.lua)
+- Added check if the user pressed cancel or not in the Aseprite
+  font export script (scripts/font_export.lua)
+
 Version 0.3.1 (alpha)
-----------------------------------------------------------------
+================================================================
+Major changes
+--------------------------------
 - Redesigned font (src/font.c)
 - Added missing font characters (src/font.c)
 - Created scripts folder with README
 - Created Aseprite script to translate font images to C
   (scripts/font_export.lua)
+
+Minor changes
+--------------------------------
 - Created Aseprite file for font (src/assets/font.aseprite)
 
 Version 0.3.0 (alpha)
-----------------------------------------------------------------
-- Fixed typo in README.md
-- Added target version to roadmap in README.md
+================================================================
+Major changes
+--------------------------------
 - Created basic built-in font data (src/font.c)
 	- Only has alphanumeric characters
 - Created text rendering (src/font.h)
 
+Minor changes
+--------------------------------
+- Added target version to roadmap in README.md
+
+Bugfixes
+--------------------------------
+- Fixed typo in README.md
+
 Version 0.2.0 (alpha)
-----------------------------------------------------------------
+================================================================
+Major changes
+--------------------------------
 - Added missing colors (src/render.h)
 	- Replaced dark orange with brown
-- Reordered colors for better code organization (src/render.h)
 - Added input support (src/input.h)
 
+Minor changes
+--------------------------------
+- Reordered colors for better code organization (src/render.h)
+
 Version 0.1.0 (alpha)
-----------------------------------------------------------------
+================================================================
+Major changes
+--------------------------------
 - Cartridge metadata loading (src/cart.h)
 - Basic graphics added (src/render.h)
 	- Screen scaling based on window size

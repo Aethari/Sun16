@@ -36,7 +36,7 @@ Some features that may or may not be added later, but are cool ideas anyway:
 | Screen size		| 256x128 px				  |
 | Palette			| 16 colors					  |
 | Sprite size		| 16x16						  |
-| Sprite sheet		| 256x256					  |
+| Sprite sheet size | 256x256					  |
 | Tilemap			| 256x256					  |
 | Audio				| 16 total tracks			  |
 | Input				| joystick/arrows + 4 buttons |

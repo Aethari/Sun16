@@ -13,8 +13,8 @@ sds cart_get_title();
 /// index of the spritesheet is used as opposed to the
 /// whole array.
 /// IMPORTANT: these functions do not deal with actual
-/// 		   DATA - they just return the path where
-/// 		   the data is stored
+/// 		   DATA - they just return the path to the
+/// 		   file where the data is stored
 ///
 /// Parameters:
 /// - i: The index of the spritesheet to be retrieved

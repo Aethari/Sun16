@@ -14,6 +14,7 @@
 #include "cart.h"
 #include "render.h"
 #include "input.h"
+#include "sprite.h"
 
 #ifdef __unix__
 	#include <unistd.h>
@@ -42,6 +43,7 @@ int main(int argc, char *argv[]) {
 
 	cart_init(sdsdup(cwd));
 
+	// setup SDL
 	SDL_Window *window;
 	bool running = true;
 
@@ -59,12 +61,13 @@ int main(int argc, char *argv[]) {
 		SDL_WINDOW_OPENGL |
 		SDL_WINDOW_RESIZABLE
 	);
-	render_init(window);
 
+	// setup Sun16 (other than config)
+	render_init(window);
+	sprite_init(sdsdup(cwd));
+
+	// core loop
 	while(running) {
-		render_print(sdsnew("abcdefghijklmnopqrstuvwxyz"), 10, 10, WHITE);
-		render_print(sdsnew("1234567890!@#$%^&*()+-/=<>"), 10, 27, WHITE);
-		render_print(sdsnew(".,:;\"'`~\\"), 10, 44, WHITE);
 		render_draw();
 		running = input_update();
 	}

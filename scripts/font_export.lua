@@ -11,12 +11,16 @@ local pd = Dialog("Sun16 Font Exporter")
 pd:canvas{width = 200}
 
 local filepath = app.fs.userDocsPath.."/out.txt"
-pd:entry{id="file_path", label = "Ouput file path:", text=filepath}
+pd:entry{id="file_path", label = "Output file path:", text=filepath}
 pd:button{id="confirm", text="Confirm"}
 pd:button{id="cancel", text="Cancel"}
 pd:show()
 
 local pd_data = pd.data
+
+if not pd_data.confirm then
+	return
+end
 
 -- getting the sprite and confirming it exists
 local spr = app.sprite
@@ -26,7 +30,7 @@ if not spr then
 end
 
 -- open the file at the specified path, creating it if it doesn't exist
-local out = io.open(filepath, "w")
+local out = io.open(pd_data.file_path, "w")
 
 out:write([[/*
  * Sun16's font

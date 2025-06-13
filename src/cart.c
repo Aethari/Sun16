@@ -58,8 +58,7 @@ sds cart_get_spritesheet(int i) {
 		if(spritesheets[i] != NULL) {
 			return sdsdup(spritesheets[i]);
 		} else {
-			printf("Error (cart.c): Spritesheet at index %d is invalid. Check your cart.s16 file.\n", i);
-			exit(1);
+			return NULL;
 		}
 	} else {
 		// find the first valid spritesheet and return it
@@ -84,8 +83,7 @@ sds cart_get_tilemap(int i) {
 		if(tilemaps[i] != NULL) {
 			return sdsdup(tilemaps[i]);
 		} else {
-			printf("Error (cart.c): Tilemap at index %d is invalid. Check your cart.s16 file.\n", i);
-			exit(1);
+			return NULL;
 		}
 	} else {
 		// find the first valid tilemap and return it
@@ -110,8 +108,7 @@ sds cart_get_sound(int i) {
 		if(sounds[i] != NULL) {
 			return sdsdup(sounds[i]);
 		} else {
-			printf("Error (cart.c): Sound at index %d is invalid. Check your cart.s16 file.\n", i);
-			exit(1);
+			return NULL;
 		}
 	} else {
 		// find the first valid sound and return it
@@ -136,8 +133,7 @@ sds cart_get_music(int i) {
 		if(music[i] != NULL) {
 			return sdsdup(music[i]);
 		} else {
-			printf("Error (cart.c): Music track at index %d is invalid. Check your cart.s16 file.\n", i);
-			exit(1);
+			return NULL;
 		}
 	} else {
 		// find the first valid music track and return it
