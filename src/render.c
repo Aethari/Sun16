@@ -25,6 +25,14 @@ struct RGB {
 };
 
 // == Color helper functions ===================================
+/// Converts a hex color (what is defined in the Color struct)
+/// into an RGB struct that SDL can use.
+///
+/// Parameters:
+/// - col: The color to be converted to RGB
+///
+/// Returns:
+/// An RGB struct with the hex color converted to RGB values.
 struct RGB hex_to_rgb(Color col) {
 	struct RGB out;
 	out.r = (col >> 16) & 0xFF;

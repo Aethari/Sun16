@@ -24,8 +24,26 @@
 #endif
 
 #define PATH_MAX_LEN 2048
+#define VERSION "0.4.0 (alpha)"
 
 int main(int argc, char *argv[]) {
+	if(argc > 1) {
+		if(strcmp(argv[1], "-v") == 0) {
+			printf("Sun16 version %s\n", VERSION);
+			printf("2025 Aethari\n");
+			printf("https://github.com/Aethari/Sun16\n");
+			exit(0);
+		} else {
+			printf("Error (main.c): Command line argument \"%s\" not recognized.\n", argv[1]);
+			exit(1);
+		}
+	}
+
+	printf("Sun16 version %s\n", VERSION);
+	printf("2025 Aethari\n");
+	printf("https://github.com/Aethari/Sun16\n");
+	printf("====================================\n\n");
+
 	// get cwd
 	char *buff = (char *)malloc(PATH_MAX_LEN);
 	if(buff == NULL) {

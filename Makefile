@@ -43,20 +43,20 @@ clean: clean-win
 else
 $(info Guessing Unix)
 
-all: build-nix
-build: build-nix
-test: test-nix
-install: install-nix
-clean: clean-nix
+all: build-unix
+build: build-unix
+test: test-unix
+install: install-unix
+clean: clean-unix
 
 endif
 
-INCLUDE = -Isrc -Ilib/SDL/include -Ilib/Lua/src -Ilib/MLog -Ilib/
+INCLUDE = -Isrc -Ilib/SDL/include -Ilib/Lua/src -Ilib/
 LINK = -Llib -Lbuild
 CFLAGS = -lSDL3 -llua54 -lm -Wall
 
 # == Unix targets =============================================
-build-nix:
+build-unix:
 	make clean
 
 	mkdir -p build
@@ -73,7 +73,7 @@ build-nix:
 	@echo Compiling project:
 	$(CC) $(SRCS) $(INCLUDE) $(LINK) $(CFLAGS) -g -o build/sun16
 
-test-nix:
+test-unix:
 	make
 
 	@echo cd example
@@ -83,11 +83,11 @@ test-nix:
 	@echo
 	@cd example && LD_LIBRARY_PATH=build ../build/sun16
 
-install-nix:
+install-unix:
 	make
 	cp /build/sun16 /usr/bin/sun16
 
-clean-nix:
+clean-unix:
 	@mkdir -p build
 	rm -fr build
 

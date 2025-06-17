@@ -1,9 +1,10 @@
-Version 0.x.x (alpha)
+Version 0.4.0 (alpha)
 ================================================================
 Major changes
 --------------------------------
 - Added Aseprite script to export spritesheets to .sdat files
   (scripts/sprite_export.lua)
+- Added sprite loading/rendering (src/sprite.h)
 
 Minor changes
 --------------------------------
@@ -11,6 +12,16 @@ Minor changes
   throwing an error when there is no data at a given index
   (src/cart.c)
 - Added example spritesheet (example/assets/sprites.sdat)
+- Added command-line argument to view app version (main.c)
+- Remove MLog dependency from Makefile
+- Change Unix targets to actually say "unix" instead of "nix" in
+  the Makefile
+- Added indexing information to the README, in the Source
+  documentation heading
+- Added version number display when Sun16 starts
+- Changed specification in the README to accurately show the
+  total number of allowed music tracks and sound effects
+- Added documentation for hex_to_rgb() (src/render.c)
 
 Bugfixes
 --------------------------------
@@ -19,6 +30,7 @@ Bugfixes
   using the path the user provided (scripts/font_export.lua)
 - Added check if the user pressed cancel or not in the Aseprite
   font export script (scripts/font_export.lua)
+- Fixed typo in README.md
 
 Version 0.3.1 (alpha)
 ================================================================

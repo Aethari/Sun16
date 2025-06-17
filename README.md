@@ -38,7 +38,8 @@ Some features that may or may not be added later, but are cool ideas anyway:
 | Sprite size		| 16x16						  |
 | Sprite sheet size | 256x256					  |
 | Tilemap			| 256x256					  |
-| Audio				| 16 total tracks			  |
+| Sfx               | 32 sounds                   |
+| Music             | 32 total tracks             |
 | Input				| joystick/arrows + 4 buttons |
 
 ## Roadmap
@@ -48,11 +49,21 @@ Some features that may or may not be added later, but are cool ideas anyway:
 | Graphics        | Yes        | 0.1.0 (alpha)  |
 | Input           | Yes        | 0.2.0 (alpha)  |
 | Text Graphics   | Yes        | 0.3.0 (alpha)  |
-| Sprites         | No         | 0.4.0 (alpha)  |
+| Sprites         | Yes        | 0.4.0 (alpha)  |
 | Tilemaps        | No         | 0.4.0 (alpha)  |
 | Sounds/music    | No         | 0.5.0 (alpha)  |
 | Lua interface   | No         | 0.1.0          |
+| Binary exports  | No         | 0.2.0          |
 | Bugfixes/polish | No         | 1.0.0          |
+
+#### Planned features
+These features are things I would *like* to add to the engine, but some
+of them may not end up happening.
+
+| Task            | Completed? |
+|-----------------|------------|
+| HTML5 exports   | No         |
+| Engine logging  | No         |
 
 ## Usage
 Sun16 has official documentation, hosted within this repo's [doc](doc/) folder 
@@ -71,12 +82,41 @@ the project, and to increase navigatability. At its core, Sun16 is not a
 very complicated program, so it doesn't need *too* much code (at least, I
 hope for future me).
 
+#### A note on indexing
+This will probably be moved to somewhere in the documentation later, but I had
+nowhere better to put it, so here it is.  
+
+Becuase Sun16 uses Lua, indexing between the two languages (Lua and the C source
+code) can become quite muddled. To clarify, I have created a table to know when
+to use 1 or 0 based indexing. The table is to be used for **both** languages
+(i.e. if you are to use 1-based indexing, parameters, even in C, should use
+1-based, even though C is 0-based).
+
+| Instance                                        | 1-based | 0-based |
+|-------------------------------------------------|---------|---------|
+| Cart data tables (spritesheets, tilemaps, etc.) |    X    |    -    |
+| Pixel coordinates                               |    -    |    X    |
+| Tile coordinates                                |    -    |    X    |
+| Screen/display coordinates                      |    -    |    X    |
+| Color indeicies                                 |    X    |    -    |
+
+When using 1-based indexing in C, an issue arises in that C arrays are not
+0-indexed. The solution is to place an `<index var>--;` line at the top of
+the function to translate the data back into 0-indexing, wrapped in a bounds
+check. See [sprite_draw()](src/sprite.c) for an example.  
+
+Indexing differences only *really* matter when navigating/working on the source
+code. To the normal user, who only interacts with Lua, the differences are
+trivial and make much more logical sense relating to the language. I hope that
+whole section actually clarified indexing for you, and didn't confuse you even
+more :)
+
 ### Adding platforms
 At the moment, Sun16 only supports two platforms: Unix and Windows. This 
 availability would not be a problem if Sun16 did not use stdin/out for file
 access, but because it does, there is platform specific code.  
 
-Luckily there is/will be very few places where Sun16 actually uses the
+Luckily there are/will be very few places where Sun16 actually uses the
 filesystem. If you want to add support for more platforms, simply update the
 `#ifdef`/`#elif` directives with your platform in the following files:
 - [main.c](main.c) - needs a definition for unix `getcwd()`

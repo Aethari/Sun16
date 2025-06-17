@@ -13,11 +13,11 @@ local function color_index(pv)
 	local g = pc.rgbaG(pv)
 	local a = pc.rgbaA(pv)
 
-	-- white
-	if r == 255 and g == 255 and b == 255 then
-		return 1
 	-- black
-	elseif r == 0 and g == 0 and b == 0 and a > 0 then
+	if r == 0 and g == 0 and b == 0 and a > 0 then
+		return 1
+	-- white
+	elseif r == 255 and g == 255 and b == 255 then
 		return 2
 	-- gray
 	elseif r == 178 and g == 178 and b == 178 then

@@ -10,8 +10,8 @@
 
 /// Every color that Sun16 supports.
 typedef enum {
-	WHITE       = 0xFFFFFF,
 	BLACK       = 0x000000,
+	WHITE       = 0xFFFFFF,
 	GRAY        = 0xB2B2B2,
 	RED         = 0xCB1717,
 	ORANGE      = 0xE58317,
