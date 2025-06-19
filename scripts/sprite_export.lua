@@ -74,7 +74,7 @@ end
 local pd = Dialog("Sun16 Spritesheet Exporter")
 
 local filepath = app.fs.userDocsPath.."/spritesheet.sdat"
-pd:entry{id="file_path", label = "Ouput file path:", text=filepath}
+pd:entry{id="file_path", label = "Output file path:", text=filepath}
 pd:button{id="confirm", text="Confirm"}
 pd:button{id="cancel", text="Cancel"}
 pd:show()

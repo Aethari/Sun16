@@ -62,4 +62,4 @@ accessing it.
 
 ### Example
 For clarification on how to write a `cart.s16` file see the
-[example cart.s16 file](example/cart.s16).
+[example cart.s16 file](../example/cart.s16).

@@ -37,7 +37,7 @@ Some features that may or may not be added later, but are cool ideas anyway:
 | Palette			| 16 colors					  |
 | Sprite size		| 16x16						  |
 | Sprite sheet size | 256x256					  |
-| Tilemap			| 256x256					  |
+| Tilemap			| 256x256 tiles               |
 | Sfx               | 32 sounds                   |
 | Music             | 32 total tracks             |
 | Input				| joystick/arrows + 4 buttons |
@@ -55,6 +55,16 @@ Some features that may or may not be added later, but are cool ideas anyway:
 | Lua interface   | No         | 0.1.0          |
 | Binary exports  | No         | 0.2.0          |
 | Bugfixes/polish | No         | 1.0.0          |
+
+In addition to these features that will be implemented in Sun16 itself, I plan
+on making two standalone editors: SunSprite (for Sun16 sprite editing) and 
+SunTile (for Sun16 tilemap editing). These may have a working version by the
+time Sun16 version 0.1.0 releases, or they may not depending on how motivated
+I am.  
+
+Here are links to each of the editors (or where they will eventually be):
+- [SunSprite](https://github.com/Aethari/SunSprite)
+- [SunTile](https://github.com/Aethari/SunTile)
 
 #### Planned features
 These features are things I would *like* to add to the engine, but some
@@ -98,7 +108,7 @@ to use 1 or 0 based indexing. The table is to be used for **both** languages
 | Pixel coordinates                               |    -    |    X    |
 | Tile coordinates                                |    -    |    X    |
 | Screen/display coordinates                      |    -    |    X    |
-| Color indeicies                                 |    X    |    -    |
+| Color indicies                                  |    X    |    -    |
 
 When using 1-based indexing in C, an issue arises in that C arrays are not
 0-indexed. The solution is to place an `<index var>--;` line at the top of

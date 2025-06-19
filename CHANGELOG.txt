@@ -1,3 +1,25 @@
+Version 0.x.x (alpha)
+================================================================
+Major changes
+--------------------------------
+- Added Aseprite script to export Aseprite tilemaps to sdat
+  format
+
+Minor changes
+--------------------------------
+- Added Aseprite palette file to quickly load the Sun16 palette
+  (src/assets/palette.aseprite)
+- Added example tilemap (example/assets/map.sdat)
+- Added example tilemap Aseprite file
+  (example/assets/tilemap.aseprite)
+
+Bugfixes
+--------------------------------
+- Fixed typo in README.md
+- Fixed typo in doc/cart.md that improperly linked to
+  example/cart.s16
+- Fixed typo in scripts/sprite_export.lua
+
 Version 0.4.0 (alpha)
 ================================================================
 Major changes

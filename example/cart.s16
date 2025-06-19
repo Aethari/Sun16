@@ -1,3 +1,8 @@
+-- IMPORTANT NOTE: I plan on making an actual game for the example later, but
+-- 				   while the Sun16 Lua API is not implemented, there will only
+--				   be some meaningless test data in the example. If you see
+--				   seemingly meaningless assets or weird sprites, that's why.
+
 title = "Sun16 Test Project"
 
 spritesheets = {
